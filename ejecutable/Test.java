@@ -6,15 +6,17 @@ public class Test{
     int caloriasTotales = 0;
     int componente1 = 0;
     int componente2 = 0;
-    calorias =  new int[4];
+    int count = 0;
+    calorias =  new int[7];
     for(int i = 0; i<calorias.length; i++){
       calorias[i] = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de calorias: "));
       caloriasTotales += calorias[i];
     }
+    
     //Orden descendente
+    while(count <= calorias.length){
     System.out.println("Llegando al for descendente");
     for(int i = 0; i<calorias.length; i++){
-      System.out.println("Iteracion " + i);
       if((i+1)<calorias.length && calorias[i]>calorias[i+1]){
 	calorias[i] = calorias[i];
 	
@@ -32,7 +34,10 @@ public class Test{
 
       }
     }
+    count ++;
+    }
     //Salida
+    System.out.println("Array formado: " + calorias);
     for(int i =0; i<calorias.length; i++){
       System.out.print(calorias[i]);
       System.out.println();
