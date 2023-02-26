@@ -15,27 +15,17 @@ public class Test{
     
     //Orden descendente
     while(count <= calorias.length){
-    System.out.println("Llegando al for descendente");
-    for(int i = 0; i<calorias.length; i++){
-      if((i+1)<calorias.length && calorias[i]>calorias[i+1]){
-	calorias[i] = calorias[i];
-	
+      count ++;
+      for(int i = 0; i<calorias.length; i++){
+	if((i+1)<calorias.length && calorias[i]<calorias[i+1]){
+	    componente1 = calorias[i];
+	    componente2 = calorias[i+1];
+	    calorias[i]= componente2;
+	    calorias[i+1]= componente1;
+	}
       }
-      else{
-	if(i+1 < calorias.length){
-	  componente1 = calorias[i];
-	  componente2 = calorias[i+1];
-	  calorias[i]= componente2;
-	  calorias[i+1]= componente1;
-	}
-	else{
-	  componente1=calorias[i];
-	}
+    }
 
-      }
-    }
-    count ++;
-    }
     //Salida
     System.out.println("Array formado: " + calorias);
     for(int i =0; i<calorias.length; i++){
